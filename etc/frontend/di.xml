@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Types -->
+
+    <type name="Magento\Cms\Helper\Page">
+        <plugin name="smaex_add_canonical_tag" type="Smaex\Sitemap\Plugin\Canonical"/>
+    </type>
+    <type name="Smaex\Sitemap\Model\IsHomePage">
+        <arguments>
+            <argument name="configReader" xsi:type="object">
+                Smaex\Sitemap\Model\ItemProvider\HomePageConfigReader
+            </argument>
+        </arguments>
+    </type>
+    <type name="Smaex\Sitemap\Plugin\Canonical">
+        <arguments>
+            <argument name="isHomePage" xsi:type="object">
+                Smaex\Sitemap\Model\IsHomePage
+            </argument>
+        </arguments>
+    </type>
+
+</config>

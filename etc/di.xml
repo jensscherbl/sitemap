@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Types -->
+
+    <type name="Magento\Sitemap\Model\ItemProvider\Composite">
+        <arguments>
+            <argument name="itemProviders" xsi:type="array">
+                <item name="homePageProvider" xsi:type="object">
+                    Smaex\Sitemap\Model\ItemProvider\HomePage
+                </item>
+            </argument>
+        </arguments>
+    </type>
+    <type name="Smaex\Sitemap\Model\ItemProvider\HomePage">
+        <arguments>
+            <argument name="configReader" xsi:type="object">
+                Smaex\Sitemap\Model\ItemProvider\HomePageConfigReader
+            </argument>
+        </arguments>
+    </type>
+
+</config>

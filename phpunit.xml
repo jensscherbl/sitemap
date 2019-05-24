@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/7.0/phpunit.xsd" bootstrap="vendor/autoload.php">
+    <testsuites>
+        <testsuite name="smaex/sitemap">
+            <directory>
+                Test
+            </directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory>
+                Model
+            </directory>
+            <directory>
+                Plugin
+            </directory>
+        </whitelist>
+    </filter>
+</phpunit>
